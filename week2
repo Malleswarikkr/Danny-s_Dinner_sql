@@ -43,4 +43,9 @@ else price  end prices from dannys_diner.menu as menu left join dannys_diner.sal
 on mem.customer_id=s.customer_id)
 select customer_id,sum(prices)*10 from a group by customer_id order by customer_id
 
-
+additinal :
+join All The Things
+The following questions are related creating basic data tables that Danny and his team can use to quickly derive insights without needing to join 
+the underlying tables using SQL.
+ans:SELECT s.customer_id,s.order_date,menu.product_name,menu.price,case  when s.order_date<mem.join_date then 'N' else 'Y' end as member1 from dannys_diner.menu as
+menu left join dannys_diner.sales as s on menu.product_id=s.product_id  left join dannys_diner.members as mem on mem.customer_id=s.customer_id order by s.order_date
